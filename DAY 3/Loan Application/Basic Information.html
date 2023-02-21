@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+        <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function () {
+                $("#basic-form").validate({
+                    rules: {
+                        name: {
+                            required: true,
+                            minlength: 3
+                        },
+                        age: {
+                            required: true,
+                            number: true,
+                            min: 18
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        weight: {
+                            required: {
+                                depends: function (elem) {
+                                    return $("#age").val() > 50
+                                }
+                            },
+                            number: true,
+                            min: 0
+                        }
+                    }
+                });
+            });
+</script>
+    <style>
+        body {
+            background-image: url('bg.png');
+            background-size: 1550px 1000px;
+            background-repeat: no-repeat;
+            top: 50px;
+        }
+        #bank {
+            font-family: serif;
+            background-color: transparent;
+            padding-left: 15px;
+            padding-top: 20px;
+            padding-right: 25px;
+            padding-bottom: 30px;
+            font-size:large;
+        }
+        .center{
+            text-align:center;
+        }
+        #continue{
+            text-align-last:end;
+            font-family:serif;
+            font-size:larger;
+        }
+    </style>
+</head>
+<body>
+    <img src="bank logo.png" id="bank" width="1500" height="150" />
+    <div class="center">
+        <a href="https://www.indianbank.in/#!">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.indianbank.in/departments/downloads/#!">SERVICES</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.indianbank.in/departments/banks-profile/#!">ABOUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.indianbank.in/departments/quick-contact/#!">CONTACT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.indianbank.in/departments/notifications/#!">NEWS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <h1>Basic Information</h1>
+    <div id="bank">
+        <form id="basic-form" action="" method="post">
+            <p>
+                <label for="name">First Name <span>(required, at least 3 characters)</span></label>
+                <input id="name" name="name" minlength="3" type="text" required>
+            </p>
+            <p>
+                <label for="name">Middle Name <span>(optional)</span></label>
+                <input id="name" name="name" minlength="3" type="text" required>
+            </p>
+            <p>
+                <label for="name">Last Name <span>(required, at least 1 characters)</span></label>
+                <input id="name" name="name" minlength="3" type="text" required>
+            </p>
+            <p>
+                <label for="email">E-Mail <span>(required)</span></label>
+                <input id="email" type="email" name="email" required>
+            </p>
+            <p>
+                <label for="birthday">DOB</label>
+                <input type="date" id="DOB" name="DOB">
+
+            </p>
+            <p>
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female" required> Female
+
+            </p>
+            <p>
+                <label for="name">Father Name <span>*</span></label>
+                <input id="name" typeof="text" minlength="3" type="text" required>
+            </p>
+            <p>
+                <label for"address">Home Address<span>(required, at least 10 characters)</span></label>
+                <input id="address" typeof="text" minlength=" 3" type="text" required>
+            </p>
+            <p>
+                <label for"City">City<span>(required, at least 1 characters)</span></label>
+                <input id="city" typeof="text" minlength=" 3" type="text" required>
+            </p>
+            <p>
+                <label for"state">State<span>*</span></label>
+                <input id="address" typeof="text" minlength=" 3" type="text" required>
+            </p>
+            <p>
+                <label for="pin">Pincode<span>*</span></label>
+                <input id="pin" typeof="number" minlength="5" type="number" required>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="SUBMIT">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" onclick="click">SAVE</button>
+            </p>
+        </form>
+    </div>
+    <div id="continue" >
+        <a href="file:///C:/Users/abira/OneDrive/Documents/KANINII/DAY%207/Financial%20Information.html">Continue!</a>
+    </div>
+   
+</body>
+</html>
